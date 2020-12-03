@@ -91,7 +91,7 @@ ul{
 .lt_main{
     padding-left:180px;
     height: 1000px;
-    background-color: pink;
+    /*background-color: pink;*/
     padding-top: 50px;
     transition: all 1s;
 }
@@ -111,7 +111,6 @@ ul{
 }
 .lt_topbar.hidemenu{
     padding-left:0px;
-
 }
 .lt_topbar a{
     width: 50px;
@@ -120,5 +119,10 @@ ul{
     text-align: center;
     color:#fff;
     font-size: 20px;
-
+}
+.echarts_left,
+.echarts_right{
+    width: 48%;
+    height: 400px;
+    background-color: skyblue;
 }
