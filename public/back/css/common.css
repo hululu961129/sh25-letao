@@ -126,3 +126,9 @@ ul{
     height: 400px;
     background-color: skyblue;
 }
+.table.table-bordered th,
+.table.table-bordered td{
+    text-align: center;
+    vertical-align:middle;
+
+}
