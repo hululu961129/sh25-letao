@@ -47,8 +47,8 @@ $(function () {
         $('#userModal').modal('show');
          currentId=$(this).parent().data("id");
         isDelete=$(this).hasClass("btn-danger")?0:1;
-        console.log($(this).parent().data("id"));
-        console.log(currentId);
+        //console.log($(this).parent().data("id"));
+        //console.log(currentId);
 
     })
     $('#submitBtn').click(function(){

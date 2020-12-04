@@ -47,6 +47,28 @@
             <li class="active">一级分类</li>
 
         </ol>
+        <div class="lt_content">
+            <button class="btn btn-default" id="addBtn">添加分类</button>
+        </div>
+        <table class="table table-bordered table-hover mt_20">
+            <thead>
+                <tr>
+                    <th width="20%">序号</th>
+                    <th width="80%">一级分类名</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--<tr>-->
+                    <!--<td>1</td>-->
+                    <!--<td>大大馆</td>-->
+
+                <!--</tr>-->
+            </tbody>
+        </table>
+        <div class="pull-right">
+            <ul id="paginator"></ul>
+
+        </div>
     </div>
 </div>
 <!--模态框外层-->
@@ -68,11 +90,23 @@
         </div>
     </div>
 </div>
+<script type="text/html" id="firstTpl">
+    {{each rows v i}}
+    <tr>
+        <td>{{i+1+(page-1)*size}}</td>
+        <td>{{v.categoryName}}</td>
+
+    </tr>
+    {{/each}}
+</script>
+
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/common.js"></script>
-<script src="js/index.js"></script>
+<script src="js/first.js"></script>
 </body>
 </html>
