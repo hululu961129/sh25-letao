@@ -1,11 +1,13 @@
 //进度条
 $(document).ajaxStart(function () {
     NProgress.start();
+//    在第一个ajax发送时候开启进度条
 
 })
 $(document).ajaxStop(function(){
     setTimeout(function(){
         NProgress.done();
+    //    在所有的ajax请求完成时关闭进度条
 
     },500)
 })

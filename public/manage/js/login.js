@@ -65,7 +65,7 @@ $(function() {
   // 表单校验插件有一个特点, 在表单提交的时候进行校验
   // 如果校验成功, 继续提交, 需要阻止这次默认的提交, 通过 ajax 进行请求提交
   // 如果校验失败, 默认会阻止提交
-  $('#form').on("success.form.bv", function( e ) {
+  $('#form').on("success.form.bv", function( e ){
     // 阻止默认的表单提交
     e.preventDefault();
 
@@ -77,8 +77,9 @@ $(function() {
       url: "/employee/employeeLogin",
       dataType: "json",
       data: $('#form').serialize(),
-      success: function( info ) {
-        console.log( info )
+      success: function( info ){
+        //console.log( info );
+        //console.log( $('#form').serialize());
 
         if ( info.success ) {
           // alert( "登录成功" );

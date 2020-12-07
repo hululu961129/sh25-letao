@@ -106,7 +106,7 @@ a:active {
 }
 .lt_aside .nav a.current {
   background-color: #1D1F21;
-  border-left: 3px solid #006699;
+  border-left: 3px solid #069;
 }
 .lt_aside .nav .child a {
   padding-left: 60px;

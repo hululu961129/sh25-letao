@@ -59,10 +59,11 @@ $(function () {
         //获取a的文本赋值给
         var txt=$(this).text();
         console.log(txt);
-        $('.dropdownText').text(txt);
+        $('#dropdownText').text(txt);
     //    获取a的一级分类的id
         var id=$(this).data("id");
         $('[name="categoryId"]').val(id);
+        //更新后面的图标 因为是隐藏域所以 重置图标要手动
         $('#form').data("bootstrapValidator").updateStatus("categoryId","VALID")
     })
 //    调用filupload方式完成文件上传初始化
@@ -136,9 +137,10 @@ $('#form').on('success.form.bv', function (e) {
                 $('#addModal').modal("hide");
                 currentPage=1;
                 render();
-                //由于下拉框喝图片不是表单元素，需要手动重置
+                //由于下拉框、图片不是表单元素，需要手动重置
 
                 $('#form').data("bootstrapValidator").resetForm(true);
+                //手动重置
                 $('#dropdownText').text("请选择一级分类");
                 $('#imgBox img').attr("src","./images/none.png");
             }

@@ -61,7 +61,7 @@ $(function(){
             data:$('#form').serialize(),
             dataType:"json",
             success:function(info){
-                console.log(info)
+                console.log(info);
                 if(info.success){
                     $('#addModal').modal("hide");
                     currentPage=1;

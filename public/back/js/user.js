@@ -28,7 +28,8 @@ $(function () {
                     currentPage:info.page,
                     //总页数
                     totalPages:Math.ceil(info.total/info.size),
-                    //size:"large",
+                    //size:"la
+                    // rge",
                     //    添加页码点击事件
                     onPageClicked: function (a,b,c,page) {
                         console.log(page);

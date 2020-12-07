@@ -69,6 +69,7 @@
 
             })
         })
+        //重置内容
         $('[type="reset"]').click(function () {
             $('#form').data("bootstrapValidator").resetForm();
         })
