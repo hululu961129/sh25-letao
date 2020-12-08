@@ -85,7 +85,7 @@
     <tr>
         <td>{{i+1+(page-1)*size}}</td>
         <td>{{v.proName}}</td>
-        <td>{{v.proDess}}</td>
+        <td>{{v.proDesc}}</td>
         <td>{{v.num}}</td>
         <td>{{v.size}}</td>
         <!--statu 表示上架 0表示下架-->
@@ -153,9 +153,9 @@
                         <input multiple type="file"  name="pic1" data-url="/product/addProductPic" id="fileupload" style="display: none">
                     </div>
                     <div class="form-group" id="imgBox">
-                        <!--<img style="width: 100px "src="./images/none.png" alt="">-->
-                        <!--隐藏域用于提交数据-->
-                        <input type="hidden" name="brandLogo">
+                        <!--<img style="width: 100px"src="./images/none.png" alt="">-->
+                        <!--隐藏域 专门用于图片校验-->
+                        <input type="hidden" name="picStatus">
                     </div>
 
                 </div>
