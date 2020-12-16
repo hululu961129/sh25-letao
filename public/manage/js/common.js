@@ -16,6 +16,7 @@ NProgress.configure({ showSpinner: false });
 
 // ajaxStart 所有的 ajax 开始调用
 $(document).ajaxStart(function() {
+  //// 开启进度条
   NProgress.start();
 });
 
@@ -24,6 +25,7 @@ $(document).ajaxStart(function() {
 $(document).ajaxStop(function() {
   // 模拟网络延迟
   setTimeout(function() {
+    //  // 关闭进度条
     NProgress.done();
   }, 500)
 });

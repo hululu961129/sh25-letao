@@ -69,6 +69,7 @@ $(function() {
   // (5) 将数组转换成 jsonStr
   // (6) 存到本地存储中
   // (7) 重新渲染
+
   $('.lt_history').on("click", ".btn_delete", function() {
     var that = this;
 

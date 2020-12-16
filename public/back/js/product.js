@@ -180,12 +180,17 @@ $(function() {
     //6、注册表单校验成功事件，阻止默认的提交，通过ajax提交
     $('#form').on("success.form.bv",function(e){
         e.preventDefault();
-        var paramsStr=$('#form').serialize();
-        paramsStr+="&picArr="+JSON.stringify(picArr);
+        var params=$('#form').serialize();
+        //paramsStr+="&picArr="+JSON.stringify(picArr);
+        params += "&picName1=" + picArr[0].picName + "&picAddr1=" + picArr[0].picAddr;
+        params += "&picName2=" + picArr[1].picName + "&picAddr2=" + picArr[1].picAddr;
+        params += "&picName3=" + picArr[2].picName + "&picAddr3=" + picArr[2].picAddr;
+
+        console.log(params);
         $.ajax({
             type:"post",
             url:"/product/addProduct",
-            data:paramsStr,
+            data:params,
             dataType:"json",
             success: function (info) {
                 console.log(info);
