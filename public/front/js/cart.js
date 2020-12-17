@@ -1,5 +1,6 @@
 $(function(){
 function render(){
+    //一
     //1.一进入页面 发送请求获取购物车数据
     //1.用户未登录，后台返回error拦截到登录页
     //2用户已经登录，后台返回购物车数据 进行页面渲染
@@ -28,7 +29,7 @@ setTimeout(function(){
     })
 },500)
 }
-    //2配置下拉刷新
+    //二配置下拉刷新
     mui.init({
         pullRefresh : {
             container:".mui-scroll-wrapper",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -68,4 +69,53 @@ setTimeout(function(){
         }
         })
     })
+
+    //4 编辑功能
+
+    $('.lt_main').on("tap",".btn_edit",function(){
+        //html5中里面有一个dataset可以一次性获取所有的自定义属性
+        var obj=this.dataset;
+        var id=obj.id;
+        console.log(obj);
+        //生成html
+        var htmlStr=template("editTpl",obj);
+        //mui将\n换行标记 解析成br换行标签要把\n去掉
+        htmlStr=htmlStr.replace(/\n/g,"");
+        mui.confirm(htmlStr,"编辑商品",["确认","取消"],function(e){
+            console.log(111);
+            if(e.index===0){
+            //    证明点击的是确认按钮，进行获取尺码数量 id进行，ajax提交
+                var size =$('.lt_size span.current').text();
+            //   获取 尺码 不用判断
+                var num=$('.mui-numbox-input').val();
+            //    获取数量 之前已经做了判断
+                $.ajax({
+                    type:"post",
+                    url:"/cart/updateCart",
+                data:{
+                    id:id,
+                        size:size,
+                        num:num
+
+                },
+                dataType:"json",
+                    success:function(info){
+                        console.log(info);
+                        if(info.success){
+                        //    下拉刷新一次就可
+                            mui(".mui-scroll-wrapper").pullRefresh().pulldownLoading();
+
+                        }
+                    }
+                })
+            }
+        });
+    //    进行数字初始化 不能写在function中 因为这是在点击确认的时候触发的
+        mui(".mui-numbox").numbox()
+    })
+    //5 让尺码可以被选
+    $('body').on("click",".lt_size span",function(){
+        $(this).addClass("current").siblings().removeClass("current");
+    })
+
 });
