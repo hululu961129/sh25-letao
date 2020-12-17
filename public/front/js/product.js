@@ -54,7 +54,9 @@ var productId=getSearch("productId");
                 //加入购物车操作需要登录 等于400证明没登录
                 if(info.error===400){
                     //    登录完成之后要返回上一页继续加入购物车
-                    location.href="login.html？retUrl="+location.href;
+                    location.href="login.html?retUrl="+location.href;
+                }
+
                 //2.登录的情况
                     if(info.success){
                         mui.confirm("添加成功","温馨提示",["去购物车","继续浏览"],function(e){
@@ -64,7 +66,6 @@ var productId=getSearch("productId");
                             }
                         });
                     }
-                }
             }
         })
     })
